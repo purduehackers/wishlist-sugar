@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="">
       <div className="grid min-h-screen grid-cols-6 gap-4 bg-amber-50">
-        <div className="col-span-4 col-start-2 mt-10">
+        <div className="justify-center col-span-4 col-start-2 mt-10 flux">
           <h1 className="text-5xl text-center font-noto">Purdue Hackers' Wishlist. &nbsp;
           <FontAwesomeIcon
             icon={faChessKnight}
@@ -17,7 +17,8 @@ export default function Home() {
           />
           </h1>
           <div className="flex-grow border-t-2 border-black"></div>
-          <div className="mt-4 bg-white rounded-md drop-shadow-lg">
+          <img className="items-center mx-auto mt-10 w-96" src="typewriter.png"></img>
+          <div className="mt-4 mb-12 bg-white rounded-md drop-shadow-lg">
             <h3 className="min-h-full pt-5 text-lg tracking-wide text-center h-96 font-noto">Help us build Purdue Hackers</h3>
           </div>
         </div>
