@@ -1,13 +1,33 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
+interface FormState {
+  title: string;
+  details: string;
+}
 
 export default function Home() {
   const { data: session } = useSession();
+  const [inputs, setInputs] = useState<FormState>({
+    title: "",
+    details: "",
+  });
+
+  const handleChange = (event: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) => {
+    setInputs({
+      ...inputs,
+      [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(inputs);
+  }
   
   let loginButton;
   let form;
@@ -22,21 +42,24 @@ export default function Home() {
   else {
     loginButton = <div><p>Hi, {session.user!.name}</p> <button onClick={() => signOut()} className="px-3 py-1 text-white bg-black rounded-full">Sign out</button></div>
     form = 
-      <div className="grid grid-cols-6 mt-3">
-        <div className="col-span-4 col-start-2">
-          <form className="">
-            <div className="px-3 mb-6 md:flex md:items-center">
-              <div className="w-1/4">
-                <label className="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0">
-                  Title
-                </label>
-              </div>
-              <div className="w-3/4">
-                <input className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none" id="inline-full-name" type="text"></input>
-              </div>
-            </div>
-          </form>
-        </div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label>Idea title:</label>
+          <input
+            type="text"
+            name="title"
+            onChange={handleChange}
+          ></input>
+          <br />
+          <label>Idea Details:</label>
+          <br />
+          <textarea 
+            name="details"
+            onChange={handleChange}
+          />
+          <br />
+          <button type="submit">submit</button>
+        </form>
       </div>
       
   }
