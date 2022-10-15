@@ -1,6 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import React, { useRef, useState } from "react";
-import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
@@ -93,7 +92,7 @@ export default function Home() {
             {loginButton}
           </div>
           <div className="items-center justify-center col-span-4 col-start-2 mt-10" ref={topRef}>
-            <h1 className="text-5xl text-center font-noto">Purdue Hackers' Wishlist. &nbsp;
+            <h1 className="text-5xl text-center font-noto">Purdue Hackers&apos; Wishlist. &nbsp;
             <FontAwesomeIcon
               icon={faChessKnight}
               style={{ fontSize: 50}}
@@ -110,7 +109,7 @@ export default function Home() {
                 className="animate-bounce"
               />
             </div>
-            <Image className="mx-auto mt-5 w-96" src="typewriter.png"></Image>
+            <img className="mx-auto mt-5 w-96" src="typewriter.png"></img>
             <div className="mt-4 mb-12 bg-white rounded-md min-h-fit h-96 drop-shadow-lg font-noto" ref={formRef}>
               <h3 className="pt-5 text-lg tracking-wide text-center">Help us build Purdue Hackers</h3>
               {form}
@@ -122,7 +121,7 @@ export default function Home() {
         <div className="h-30 bg-neutral-700">
         <div className="grid grid-cols-6 gap-4">
           <div className="items-center justify-center col-span-4 col-start-2 mt-10">
-            <h1 className="mt-10 text-5xl text-center text-white font-noto">Purdue Hackers' Wishlist. &nbsp;
+            <h1 className="mt-10 text-5xl text-center text-white font-noto">Purdue Hackers&apos; Wishlist. &nbsp;
             <FontAwesomeIcon
               icon={faChessKnight}
               style={{ fontSize: 50}}
