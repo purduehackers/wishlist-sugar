@@ -33,7 +33,6 @@ export default function Home() {
         'Content-Type': 'application/json',
       },
     })
-    console.log(response);
   }
   
   let loginButton;
