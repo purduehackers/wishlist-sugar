@@ -79,7 +79,10 @@ export default function Home() {
   }
 
   const formRef = useRef<null | HTMLDivElement>(null); 
-  const scroll = () => formRef.current!.scrollIntoView({behavior: "smooth"});
+  const formScroll = () => formRef.current!.scrollIntoView({behavior: "smooth"});
+
+  const topRef = useRef<null | HTMLDivElement>(null); 
+  const topScroll = () => topRef.current!.scrollIntoView({behavior: "smooth"});
 
   return (
     <div>
@@ -88,7 +91,7 @@ export default function Home() {
           <div className="px-3 py-3 font-noto">
             {loginButton}
           </div>
-          <div className="items-center justify-center col-span-4 col-start-2 mt-10">
+          <div className="items-center justify-center col-span-4 col-start-2 mt-10" ref={topRef}>
             <h1 className="text-5xl text-center font-noto">Purdue Hackers' Wishlist. &nbsp;
             <FontAwesomeIcon
               icon={faChessKnight}
@@ -97,7 +100,7 @@ export default function Home() {
             </h1>
             <div className="flex-grow border-t-2 border-black"></div>
             <div className="flex items-center justify-center w-full mt-5">
-              <button onClick={scroll} className="px-5 py-2 text-white bg-black rounded-full">Start An Idea</button>
+              <button onClick={formScroll} className="px-5 py-2 text-white bg-black rounded-full">Start An Idea</button>
             </div>
             <div className="flex items-center justify-center w-full mt-2">
               <FontAwesomeIcon
@@ -126,7 +129,7 @@ export default function Home() {
             </h1>
             <div className="flex-grow border-t-2 border-white"></div>
             <div className="flex items-center justify-center w-full mt-5">
-              <button onClick={scroll} className="px-5 py-2 text-black bg-white rounded-full">Start An Idea</button>
+              <button onClick={topScroll} className="px-5 py-2 text-black bg-white rounded-full">Go Back Up</button>
             </div>
             <div className="flex items-center justify-center w-full mt-2">
               <FontAwesomeIcon
