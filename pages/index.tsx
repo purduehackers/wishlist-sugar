@@ -1,5 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
@@ -109,7 +110,7 @@ export default function Home() {
                 className="animate-bounce"
               />
             </div>
-            <img className="mx-auto mt-5 w-96" src="typewriter.png"></img>
+            <Image className="mx-auto mt-5 w-96" src="typewriter.png"></Image>
             <div className="mt-4 mb-12 bg-white rounded-md min-h-fit h-96 drop-shadow-lg font-noto" ref={formRef}>
               <h3 className="pt-5 text-lg tracking-wide text-center">Help us build Purdue Hackers</h3>
               {form}
