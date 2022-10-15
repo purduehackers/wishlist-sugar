@@ -24,9 +24,16 @@ export default function Home() {
     })
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(inputs);
+    const response = await fetch('/api/table', {
+      method: 'POST',
+      body: JSON.stringify({inputs}),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    console.log(response);
   }
   
   let loginButton;
