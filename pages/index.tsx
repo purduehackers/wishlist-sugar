@@ -33,6 +33,10 @@ export default function Home() {
         'Content-Type': 'application/json',
       },
     })
+    setInputs({
+      title: "",
+      details: ""
+    })
   }
   
   let loginButton;
@@ -49,22 +53,26 @@ export default function Home() {
     loginButton = <div><p>Hi, {session.user!.name}</p> <button onClick={() => signOut()} className="px-3 py-1 text-white bg-black rounded-full">Sign out</button></div>
     form = 
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="px-20">
           <label>Idea title:</label>
           <input
             type="text"
             name="title"
+            value={inputs.title}
             onChange={handleChange}
+            className="w-full notes focus:outline-none"
           ></input>
           <br />
-          <label>Idea Details:</label>
-          <br />
+          <label className="pt-3 leading-9">Idea Details:</label>
+          <br className=""/>
           <textarea 
             name="details"
+            value={inputs.details}
             onChange={handleChange}
+            className="w-full h-48 rounded outline-none resize-none notes"
           />
           <br />
-          <button type="submit">submit</button>
+          <button type="submit" className="px-3 py-1 text-white bg-black rounded-full">submit</button>
         </form>
       </div>
       
