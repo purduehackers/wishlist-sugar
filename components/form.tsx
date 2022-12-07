@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface FormState {
   title: string;
@@ -12,12 +12,22 @@ const Form = () => {
     title: "",
     details: "",
   });
+  const [typing, setTyping] = useState<boolean>(false);
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      setTyping(false)
+    }, 500)
+
+    return () => clearTimeout(delayDebounceFn)
+  }, [inputs])
 
   const handleChange = (event: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) => {
     setInputs({
       ...inputs,
       [event.currentTarget.name]: event.currentTarget.value
     })
+    setTyping(true)
   }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -36,6 +46,10 @@ const Form = () => {
   }
 
   if (session) {
+    let typingText = ""
+    if (typing) {
+      typingText = "Sugar is typing..."
+    }
     return (
       <div>
         <form onSubmit={handleSubmit} className="px-5">
@@ -58,7 +72,7 @@ const Form = () => {
           />
           <br />
           <button type="submit" className="px-3 py-1 text-white bg-black rounded-full">submit</button>
-          <div className="text-slate-700">Sugar is typing...</div>
+          <div className="pt-4 text-sm text-slate-700">{typingText}</div>
         </form>
       </div>
     )
