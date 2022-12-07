@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Header from "../components/header";
-import LoginButton from "../components/login-button";
+import LogInOutButton from "../components/log-in-out-button";
 import Form from '../components/form'
 import Footer from '../components/footer'
 
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="h-max bg-amber-50">
         <div className="grid grid-cols-6 gap-4">
           <div className="px-3 py-3 font-noto">
-            <LoginButton />
+            <LogInOutButton />
           </div>
           <div className="items-center justify-center col-span-4 col-start-2 mt-10" ref={topRef}>
             <Header formScroll={formScroll}/>

@@ -1,10 +1,10 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const LoginButton = () => {
+const LogInOutButton = () => {
   const { data: session } = useSession();
   if (session) {
     return (
-      <div></div>
+      <div><p>Hi, {session.user!.name}</p> <button onClick={() => signOut()} className="px-3 py-1 text-white bg-black rounded-full">Sign out</button></div>
     )
   }
   return (
@@ -12,4 +12,4 @@ const LoginButton = () => {
   )
 }
 
-export default LoginButton;
+export default LogInOutButton;
