@@ -21,7 +21,7 @@ const Footer = (props: IFooterProps) => {
             <div className="flex items-center justify-center w-full mt-5">
               <button onClick={props.topScroll} className="px-5 py-2 text-black bg-white rounded-full">Go Back Up</button>
             </div>
-            <div className="flex items-center justify-center w-full mt-2">
+            <div className="flex items-center justify-center w-full mt-4 mb-4">
               <FontAwesomeIcon
                 icon={faArrowDown}
                 style={{ fontSize: 25}}
