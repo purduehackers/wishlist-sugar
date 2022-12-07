@@ -38,8 +38,8 @@ const Form = () => {
   if (session) {
     return (
       <div>
-        <form onSubmit={handleSubmit} className="px-20">
-          <label>Idea title:</label>
+        <form onSubmit={handleSubmit} className="px-5">
+          <label className="">Idea title:</label>
           <input
             type="text"
             name="title"

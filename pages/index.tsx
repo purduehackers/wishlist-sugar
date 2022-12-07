@@ -20,8 +20,8 @@ export default function Home() {
           </div>
           <div className="items-center justify-center col-span-4 col-start-2 mt-10" ref={topRef}>
             <Header formScroll={formScroll}/>
-            <div className="mt-4 mb-12 bg-white rounded-md min-h-fit h-100 drop-shadow-lg font-noto" ref={formRef}>
-              <h3 className="pt-5 text-lg tracking-wide text-center">Help us build Purdue Hackers</h3>
+            <div className="pb-4 mt-4 mb-12 bg-white rounded-md min-h-100 h-fit drop-shadow-lg font-noto" ref={formRef}>
+              <h3 className="px-4 pt-5 text-lg tracking-wide text-center">Help us build Purdue Hackers</h3>
               <Form />
             </div>
           </div>
