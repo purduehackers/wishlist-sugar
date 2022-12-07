@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         alka: ['Alkalami', 'serif'],
         noto: ['Noto Serif Gujarati', 'serif']
+      },
+      height: {
+        '100': '26rem',
       }
     },
   },
