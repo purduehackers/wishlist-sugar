@@ -19,7 +19,7 @@ const handler = async (
         {
           "fields": {
             "title": req.body.inputs.title,
-            "gmail": email,
+            "email": email,
             "details": req.body.inputs.details
           }
         },

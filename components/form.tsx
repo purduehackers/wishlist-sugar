@@ -15,11 +15,11 @@ const Form = () => {
   const [typing, setTyping] = useState<boolean>(false);
 
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
+    const removeTypingText = setTimeout(() => {
       setTyping(false)
     }, 500)
 
-    return () => clearTimeout(delayDebounceFn)
+    return () => clearTimeout(removeTypingText)
   }, [inputs])
 
   const handleChange = (event: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) => {
