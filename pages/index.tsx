@@ -1,10 +1,19 @@
 import React, { useRef } from "react";
+import { GetStaticProps, NextPage } from "next";
+
 import Header from "../components/header";
 import LogInOutButton from "../components/log-in-out-button";
 import Form from "../components/form";
+import Wishlist from "../components/wishlist";
 import Footer from "../components/footer";
+import IWish from "../utils/interfaces/IWish";
+import { fetchWishes } from "../utils/fetchWishes";
 
-export default function Home() {
+interface HomeFetchedWishesProps {
+  fetchedWishes: IWish[];
+}
+
+const Home: NextPage<HomeFetchedWishesProps> = ({ fetchedWishes }) => {
   const formRef = useRef<null | HTMLDivElement>(null);
   const formScroll = () =>
     formRef.current!.scrollIntoView({ behavior: "smooth" });
@@ -34,10 +43,23 @@ export default function Home() {
               </h3>
               <Form />
             </div>
+            <Wishlist fetchedWishes={fetchedWishes}></Wishlist>
           </div>
         </div>
       </div>
       <Footer topScroll={topScroll} />
     </div>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const fetchedWishes: IWish[] = await fetchWishes();
+  return {
+    props: {
+      fetchedWishes: JSON.parse(JSON.stringify(fetchedWishes)),
+    },
+    revalidate: 60,
+  };
+};
+
+export default Home;
