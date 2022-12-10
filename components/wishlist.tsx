@@ -1,18 +1,23 @@
 import IWish from "../utils/interfaces/IWish";
+import Card from "./card";
 
 interface IWishlistProps {
   fetchedWishes: IWish[];
 }
 
 const Wishlist = ({ fetchedWishes }: IWishlistProps) => {
-  console.log(fetchedWishes);
   return (
     <div className="">
-      <div className="border-2 border-dashed rounded border-slate-700">
+      <div className="mb-12 border-2 border-dashed rounded border-slate-700">
         <div className="p-5">
-          <h1 className="text-lg text-center font-noto ">
-            Wishes from wonderful people
+          <h1 className="pb-4 text-lg text-center font-noto">
+            Wishes from Wonderful Hackers
           </h1>
+          <div className="grid grid-flow-col grid-cols-3 gap-4">
+            {fetchedWishes.map((wish) => {
+              return <Card wish={wish} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
