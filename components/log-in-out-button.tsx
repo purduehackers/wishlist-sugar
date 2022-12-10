@@ -5,16 +5,36 @@ const LogInOutButton = () => {
   if (session) {
     if (session.user) {
       return (
-        <div><p>Hi, {session.user.name}</p> <button onClick={() => signOut()} className="px-3 py-1 text-white bg-black rounded-full">Sign out</button></div>
-      )
+        <div>
+          <p>Hi, {session.user.name}</p>{" "}
+          <button
+            onClick={() => signOut()}
+            className="px-3 py-1 text-white bg-black rounded-full"
+          >
+            Sign out
+          </button>
+        </div>
+      );
     }
     return (
-      <div><button onClick={() => signOut()} className="px-3 py-1 text-white bg-black rounded-full">Sign out</button></div>
-    )
+      <div>
+        <button
+          onClick={() => signOut()}
+          className="px-3 py-1 text-white bg-black rounded-full"
+        >
+          Sign out
+        </button>
+      </div>
+    );
   }
   return (
-    <button onClick={() => signIn()} className="px-3 py-1 text-white bg-black rounded-full">Sign in</button>
-  )
-}
+    <button
+      onClick={() => signIn()}
+      className="px-3 py-1 text-white bg-black rounded-full"
+    >
+      Sign in
+    </button>
+  );
+};
 
 export default LogInOutButton;

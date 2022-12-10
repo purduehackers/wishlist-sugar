@@ -1,7 +1,3 @@
-
-const Card = () => {
-
-}
-
+const Card = () => {};
 
 export default Card;

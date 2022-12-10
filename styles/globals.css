@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alkalami&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,9 +7,14 @@
 
 .notes {
   background-attachment: local;
-  background-image:
-      linear-gradient(to right, white 10px, transparent 10px),
-      linear-gradient(to left, white 10px, transparent 10px),
-      repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: linear-gradient(to right, white 10px, transparent 10px),
+    linear-gradient(to left, white 10px, transparent 10px),
+    repeating-linear-gradient(
+      white,
+      white 30px,
+      #ccc 30px,
+      #ccc 31px,
+      white 31px
+    );
   line-height: 31px;
 }
