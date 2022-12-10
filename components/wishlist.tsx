@@ -15,7 +15,7 @@ const Wishlist = ({ fetchedWishes }: IWishlistProps) => {
           </h1>
           <div className="grid grid-flow-col grid-cols-3 gap-4">
             {fetchedWishes.map((wish) => {
-              return <Card wish={wish} />;
+              return <Card key={wish.title} wish={wish} />;
             })}
           </div>
         </div>
