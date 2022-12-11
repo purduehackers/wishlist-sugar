@@ -13,7 +13,7 @@ const Wishlist = ({ fetchedWishes }: IWishlistProps) => {
           <h1 className="pb-4 text-lg text-center font-noto">
             Wishes from Wonderful Hackers
           </h1>
-          <div className="grid grid-flow-col grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {fetchedWishes.map((wish) => {
               return <Card key={wish.title} wish={wish} />;
             })}
