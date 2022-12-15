@@ -54,12 +54,14 @@ const Form = ({ setWishes }: IFormProps) => {
         details: "",
       });
 
+      const fetchedWishes: IWish[] = await fetchWishes();
+      setWishes(fetchedWishes);
       // some time there is delay in the api, so fetch after one second
       // there might be a better way of doing this
-      setTimeout(async () => {
-        const fetchedWishes: IWish[] = await fetchWishes();
-        setWishes(fetchedWishes);
-      }, 1000);
+      // setTimeout(async () => {
+      //   const fetchedWishes: IWish[] = await fetchWishes();
+      //   setWishes(fetchedWishes);
+      // }, 1000);
     });
   };
 
