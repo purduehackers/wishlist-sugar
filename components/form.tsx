@@ -48,21 +48,22 @@ const Form = ({ setWishes }: IFormProps) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(async () => {
-      setInputs({
-        title: "",
-        details: "",
-      });
+    })
+      .then((res) => res.json())
+      .then(async (res) => {
+        setInputs({
+          title: "",
+          details: "",
+        });
 
-      const fetchedWishes: IWish[] = await fetchWishes();
-      setWishes(fetchedWishes);
-      // some time there is delay in the api, so fetch after one second
-      // there might be a better way of doing this
-      // setTimeout(async () => {
-      //   const fetchedWishes: IWish[] = await fetchWishes();
-      //   setWishes(fetchedWishes);
-      // }, 1000);
-    });
+        console.log("test: " + res);
+        // some time there is delay in the api, so fetch after one second
+        // there might be a better way of doing this
+        setTimeout(async () => {
+          const fetchedWishes: IWish[] = await fetchWishes();
+          setWishes(fetchedWishes);
+        }, 50);
+      });
   };
 
   if (session) {
