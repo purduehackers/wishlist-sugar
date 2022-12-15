@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext, createContext, useState } from "react";
 import { GetStaticProps, NextPage } from "next";
 
 import Header from "../components/header";
@@ -22,6 +22,8 @@ const Home: NextPage<HomeFetchedWishesProps> = ({ fetchedWishes }) => {
   const topScroll = () =>
     topRef.current!.scrollIntoView({ behavior: "smooth" });
 
+  const [wishes, setWishes] = useState(fetchedWishes);
+
   return (
     <div>
       <div className="h-max bg-amber-50">
@@ -41,9 +43,9 @@ const Home: NextPage<HomeFetchedWishesProps> = ({ fetchedWishes }) => {
               <h3 className="px-4 pt-5 text-lg tracking-wide text-center">
                 Help us build Purdue Hackers
               </h3>
-              <Form />
+              <Form setWishes={setWishes} />
             </div>
-            <Wishlist fetchedWishes={fetchedWishes}></Wishlist>
+            <Wishlist wishes={wishes}></Wishlist>
           </div>
         </div>
       </div>

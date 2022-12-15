@@ -1,12 +1,18 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
+import IWish from "../utils/interfaces/IWish";
+import { fetchWishes } from "../utils/fetchWishes";
 
 interface FormState {
   title: string;
   details: string;
 }
 
-const Form = () => {
+interface IFormProps {
+  setWishes: Dispatch<SetStateAction<IWish[]>>;
+}
+
+const Form = ({ setWishes }: IFormProps) => {
   const { data: session } = useSession();
   const [inputs, setInputs] = useState<FormState>({
     title: "",
@@ -42,10 +48,18 @@ const Form = () => {
       headers: {
         "Content-Type": "application/json",
       },
-    });
-    setInputs({
-      title: "",
-      details: "",
+    }).then(async () => {
+      setInputs({
+        title: "",
+        details: "",
+      });
+
+      // some time there is delay in the api, so fetch after one second
+      // there might be a better way of doing this
+      setTimeout(async () => {
+        const fetchedWishes: IWish[] = await fetchWishes();
+        setWishes(fetchedWishes);
+      }, 1000);
     });
   };
 
