@@ -78,6 +78,7 @@ const Form = ({ setWishes }: IFormProps) => {
             value={inputs.title}
             onChange={handleChange}
             className="w-full notes focus:outline-none"
+            required
           ></input>
           <br />
           <label className="pt-3 leading-9">Idea Details:</label>
@@ -87,6 +88,7 @@ const Form = ({ setWishes }: IFormProps) => {
             value={inputs.details}
             onChange={handleChange}
             className="w-full rounded outline-none resize-none h-52 notes"
+            required
           />
           <br />
           <button

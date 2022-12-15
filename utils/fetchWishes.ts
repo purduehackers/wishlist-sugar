@@ -8,8 +8,8 @@ export async function fetchWishes(): Promise<IWish[]> {
     })
   );
   return new Promise((resolve, reject) => {
-    // const api = `https://api.purduehackers.com/wishlist?select=${select}`;
-    const api = `http://localhost:8080/wishlist?select=${select}`;
+    const api = `https://api.purduehackers.com/wishlist?select=${select}`;
+    // const api = `http://localhost:8080/wishlist?select=${select}`;
     fetch(api)
       .then((r) => r.json())
       .then((records) => {
