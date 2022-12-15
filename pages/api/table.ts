@@ -5,9 +5,6 @@ import { getSession } from "next-auth/react";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
   switch (method) {
-    case "GET":
-      res.json({ title: "this is cool", details: "rocket" });
-      break;
     case "POST":
       const session = await getSession({ req });
       const email = session?.user?.email || "null";
@@ -17,10 +14,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         [
           {
             fields: {
-              title: req.body.inputs.title,
-              email: email,
-              details: req.body.inputs.details,
-              date: now.toString(),
+              Title: req.body.inputs.title,
+              Email: email,
+              Details: req.body.inputs.details,
+              Date: now.toString(),
+              Unlisted: false,
             },
           },
         ],

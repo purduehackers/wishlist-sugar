@@ -8,7 +8,7 @@ interface ICardProps {
 
 const Card = ({ wish }: ICardProps) => {
   const expandCard = () => {
-    const card = document.getElementById(wish.title);
+    const card = document.getElementById(wish["Title"]);
     if (card != undefined) {
       if (card.offsetHeight > 1000) {
         card.classList.add("row-span-6");
@@ -28,12 +28,12 @@ const Card = ({ wish }: ICardProps) => {
     expandCard();
   });
 
-  const date = new Date(wish.date);
+  const date = new Date(wish["Date"]);
   return (
-    <div className="p-5 bg-white drop-shadow-lg font-noto" id={wish.title}>
+    <div className="p-5 bg-white drop-shadow-lg font-noto" id={wish["Title"]}>
       <p className="text-sm text-center">{date.toDateString()}</p>
-      <h1 className="font-bold text-center capitalize">{wish.title}</h1>
-      <p className="text-center">{wish.details}</p>
+      <h1 className="font-bold text-center capitalize">{wish["Title"]}</h1>
+      <p className="text-center">{wish["Details"]}</p>
     </div>
   );
 };

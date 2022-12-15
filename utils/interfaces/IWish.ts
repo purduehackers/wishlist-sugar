@@ -1,6 +1,6 @@
 export default interface IWish {
-  title: string;
-  details: string;
-  email: string;
-  date: Date;
+  Title: string;
+  Details: string;
+  Email: string;
+  Date: Date;
 }
