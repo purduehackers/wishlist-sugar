@@ -1,4 +1,4 @@
-import React, { useRef, useContext, createContext, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { GetStaticProps, NextPage } from "next";
 
 import Header from "../components/header";
@@ -13,7 +13,7 @@ interface HomeFetchedWishesProps {
   fetchedWishes: IWish[];
 }
 
-const Home: NextPage<HomeFetchedWishesProps> = ({ fetchedWishes }) => {
+const Home: NextPage<HomeFetchedWishesProps> = () => {
   const formRef = useRef<null | HTMLDivElement>(null);
   const formScroll = () =>
     formRef.current!.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +22,16 @@ const Home: NextPage<HomeFetchedWishesProps> = ({ fetchedWishes }) => {
   const topScroll = () =>
     topRef.current!.scrollIntoView({ behavior: "smooth" });
 
-  const [wishes, setWishes] = useState(fetchedWishes);
+  const [wishes, setWishes] = useState<IWish[]>([]);
+
+  useEffect(() => {
+    const callFetchedWishes = async () => {
+      const fetchedWishes: IWish[] = await fetchWishes();
+      setWishes(fetchedWishes);
+    };
+
+    callFetchedWishes();
+  }, []);
 
   return (
     <div>

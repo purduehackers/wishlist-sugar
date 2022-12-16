@@ -62,7 +62,8 @@ const Form = ({ setWishes }: IFormProps) => {
         setTimeout(async () => {
           const fetchedWishes: IWish[] = await fetchWishes();
           setWishes(fetchedWishes);
-        }, 50);
+          console.log(fetchedWishes);
+        }, 1000);
       });
   };
 
