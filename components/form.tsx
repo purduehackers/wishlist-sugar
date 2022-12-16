@@ -40,31 +40,27 @@ const Form = ({ setWishes }: IFormProps) => {
     setTyping(true);
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const submitWish = async () => {
     const response = await fetch("/api/table", {
       method: "POST",
       body: JSON.stringify({ inputs }),
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then(async (res) => {
-        setInputs({
-          title: "",
-          details: "",
-        });
+    });
+    return response;
+  };
 
-        console.log("test: " + res);
-        // some time there is delay in the api, so fetch after one second
-        // there might be a better way of doing this
-        setTimeout(async () => {
-          const fetchedWishes: IWish[] = await fetchWishes();
-          setWishes(fetchedWishes);
-          console.log(fetchedWishes);
-        }, 1000);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    submitWish().then(async (res) => {
+      setInputs({
+        title: "",
+        details: "",
       });
+      const fetchedWishes: IWish[] = await fetchWishes();
+      setWishes(fetchedWishes);
+    });
   };
 
   if (session) {
