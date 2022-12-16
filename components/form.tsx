@@ -19,6 +19,7 @@ const Form = ({ setWishes }: IFormProps) => {
     details: "",
   });
   const [typing, setTyping] = useState<boolean>(false);
+  const [submitting, setSubmitting] = useState<boolean>(false);
 
   useEffect(() => {
     const removeTypingText = setTimeout(() => {
@@ -53,11 +54,13 @@ const Form = ({ setWishes }: IFormProps) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitting(true);
     submitWish().then(async (res) => {
       setInputs({
         title: "",
         details: "",
       });
+      setSubmitting(false);
       const fetchedWishes: IWish[] = await fetchWishes();
       setWishes(fetchedWishes);
     });
@@ -67,6 +70,10 @@ const Form = ({ setWishes }: IFormProps) => {
     let typingText = "";
     if (typing) {
       typingText = "Sugar is typing...";
+    }
+    let submitText = "Submit";
+    if (submitting) {
+      submitText = "Submitting...";
     }
     return (
       <div>
@@ -93,9 +100,13 @@ const Form = ({ setWishes }: IFormProps) => {
           <br />
           <button
             type="submit"
-            className="px-3 py-1 text-white bg-black rounded-full"
+            className={
+              "px-3 py-1 text-white bg-black rounded-full " +
+              (submitting ? "bg-slate-600" : "")
+            }
+            disabled={submitting}
           >
-            submit
+            {submitText}
           </button>
           <div className="pt-4 text-sm text-slate-700">{typingText}</div>
         </form>
