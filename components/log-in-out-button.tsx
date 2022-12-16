@@ -29,7 +29,7 @@ const LogInOutButton = () => {
   }
   return (
     <button
-      onClick={() => signIn()}
+      onClick={() => signIn("google")}
       className="px-3 py-1 text-white bg-black rounded-full"
     >
       Sign in
