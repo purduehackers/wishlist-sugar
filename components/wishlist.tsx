@@ -10,7 +10,7 @@ const Wishlist = ({ wishes }: IWishlistProps) => {
   return (
     <div className="">
       <div className="mb-12 border-2 border-dashed rounded border-slate-700">
-        <div className="p-5">
+        <div className="p-2">
           <h1 className="pb-4 text-lg text-center font-noto">
             Wishes from Wonderful Hackers
           </h1>
