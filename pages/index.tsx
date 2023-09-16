@@ -37,20 +37,20 @@ const Home: NextPage<HomeFetchedWishesProps> = () => {
   return (
     <div>
       <Head>
-        {/* <meta property="og:site_name" content="Purdue Hackers" />
-        <meta property="og:name" content="Events — Purdue Hackers" />
-        <meta property="og:title" content="Events — Purdue Hackers" />
+        <meta property="og:site_name" content="Purdue Hackers" />
+        <meta property="og:name" content="Sugar — Purdue Hackers" />
+        <meta property="og:title" content="Sugar — Purdue Hackers" />
         <meta
           property="og:image"
-          content="https://og.purduehackers.com/Events.png?theme=light&md=1&fontSize=300px&caption="
-        /> */}
-        {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
-        {/* <meta
+          content="https://og.purduehackers.com/Wishlist.png?theme=light&md=1&fontSize=250px&caption=Put%2520down%2520your%2520thoughts%21&images="
+        />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta
           property="og:description"
-          content="Check out & sign up for upcoming events from Purdue Hackers."
-        /> */}
-        {/* <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:type" content="website" /> */}
+          content="Put down your thoughts and things you wish to happen in Purdue Hackers > W <"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" />
         <title>Sugar — Purdue Hackers</title>
       </Head>
       <div className="h-max bg-amber-50">
