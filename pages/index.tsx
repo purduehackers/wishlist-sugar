@@ -47,7 +47,7 @@ const Home: NextPage<HomeFetchedWishesProps> = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           property="og:description"
-          content="Put down your thoughts and things you wish to happen in Purdue Hackers > W <"
+          content="Got any suggestions for Purdue Hackers? Write them down here! >w<"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:type" content="website" />
