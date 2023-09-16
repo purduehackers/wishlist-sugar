@@ -7,6 +7,7 @@ import Form from "../components/form";
 import Wishlist from "../components/wishlist";
 import Footer from "../components/footer";
 import IWish from "../utils/interfaces/IWish";
+import Head from "next/head";
 import { fetchWishes } from "../utils/fetchWishes";
 
 interface HomeFetchedWishesProps {
@@ -35,6 +36,23 @@ const Home: NextPage<HomeFetchedWishesProps> = () => {
 
   return (
     <div>
+      <Head>
+        {/* <meta property="og:site_name" content="Purdue Hackers" />
+        <meta property="og:name" content="Events — Purdue Hackers" />
+        <meta property="og:title" content="Events — Purdue Hackers" />
+        <meta
+          property="og:image"
+          content="https://og.purduehackers.com/Events.png?theme=light&md=1&fontSize=300px&caption="
+        /> */}
+        {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
+        {/* <meta
+          property="og:description"
+          content="Check out & sign up for upcoming events from Purdue Hackers."
+        /> */}
+        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:type" content="website" /> */}
+        <title>Sugar — Purdue Hackers</title>
+      </Head>
       <div className="h-max bg-amber-50">
         <div className="grid grid-cols-6 gap-4">
           <div className="px-3 py-3 font-noto">
