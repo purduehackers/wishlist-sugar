@@ -68,7 +68,7 @@ const Home: NextPage<HomeFetchedWishesProps> = () => {
               ref={formRef}
             >
               <h3 className="px-4 pt-5 text-lg tracking-wide text-center">
-                Help us build Purdue Hackers
+                Help Us Build Purdue Hackers
               </h3>
               <Form setWishes={setWishes} />
             </div>

@@ -9,7 +9,7 @@ const Header = (props: IHeaderProps) => {
   return (
     <div>
       <div className="text-5xl text-center font-noto">
-        Purdue Hackers&apos; Wishlist&apos;   
+        Purdue Hackers Wishlist
         <FontAwesomeIcon icon={faChessKnight} style={{ fontSize: 50 }}/>
       </div>
       <div className="flex-grow border-t-2 border-black"></div>

@@ -116,7 +116,7 @@ const Form = ({ setWishes }: IFormProps) => {
 
   return (
     <div className="mt-16 text-center">
-      <p>Please signed in first</p>
+      <p>Sign In to Add Your Suggestion!</p>
       <button
         onClick={() => signIn()}
         className="px-3 py-1 text-white bg-black rounded-full"
