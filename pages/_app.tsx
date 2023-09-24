@@ -7,14 +7,14 @@ import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 const GlobalStyles = createGlobalStyle`
     ${dom.css()}
-`;
+`; 
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: any) {
   return (
     <div>
       <Head>
         <link
-            rel="shortcut icon"
+            rel='shortcut icon'
             href="/image/favicon.ico"
           />
       </Head>
