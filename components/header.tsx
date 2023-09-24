@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChessKnight, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChessKnight, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 interface IHeaderProps {
   formScroll(): void;
@@ -9,8 +9,8 @@ const Header = (props: IHeaderProps) => {
   return (
     <div>
       <div className="text-5xl text-center font-noto">
-        Purdue Hackers&apos; Wishlist&apos;   
-        <FontAwesomeIcon icon={faChessKnight} style={{ fontSize: 50 }}/>
+        Purdue Hackers Wishlist
+        <FontAwesomeIcon icon={faChessKnight} style={{ fontSize: 50 }} />
       </div>
       <div className="flex-grow border-t-2 border-black"></div>
       <div className="flex items-center justify-center w-full mt-5">
