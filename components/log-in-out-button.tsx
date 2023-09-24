@@ -1,4 +1,4 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const LogInOutButton = () => {
   const { data: session } = useSession();
@@ -6,7 +6,7 @@ const LogInOutButton = () => {
     if (session.user) {
       return (
         <div>
-          <p>Hi, {session.user.name}</p>{" "}
+          <p>Hi, {session.user.name}</p>{' '}
           <button
             onClick={() => signOut()}
             className="px-3 py-1 text-white bg-black rounded-full"
@@ -29,7 +29,7 @@ const LogInOutButton = () => {
   }
   return (
     <button
-      onClick={() => signIn("google")}
+      onClick={() => signIn('google')}
       className="px-3 py-1 text-white bg-black rounded-full"
     >
       Sign in

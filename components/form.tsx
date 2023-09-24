@@ -1,7 +1,7 @@
-import { useSession, signIn, signOut } from "next-auth/react";
-import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import IWish from "../utils/interfaces/IWish";
-import { fetchWishes } from "../utils/fetchWishes";
+import { useSession, signIn, signOut } from 'next-auth/react';
+import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import IWish from '../utils/interfaces/IWish';
+import { fetchWishes } from '../utils/fetchWishes';
 
 interface FormState {
   title: string;
@@ -15,8 +15,8 @@ interface IFormProps {
 const Form = ({ setWishes }: IFormProps) => {
   const { data: session } = useSession();
   const [inputs, setInputs] = useState<FormState>({
-    title: "",
-    details: "",
+    title: '',
+    details: '',
   });
   const [typing, setTyping] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -42,11 +42,11 @@ const Form = ({ setWishes }: IFormProps) => {
   };
 
   const submitWish = async () => {
-    const response = await fetch("/api/table", {
-      method: "POST",
+    const response = await fetch('/api/table', {
+      method: 'POST',
       body: JSON.stringify({ inputs }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     return response;
@@ -57,8 +57,8 @@ const Form = ({ setWishes }: IFormProps) => {
     setSubmitting(true);
     submitWish().then(async (res) => {
       setInputs({
-        title: "",
-        details: "",
+        title: '',
+        details: '',
       });
       setSubmitting(false);
       const fetchedWishes: IWish[] = await fetchWishes();
@@ -67,13 +67,13 @@ const Form = ({ setWishes }: IFormProps) => {
   };
 
   if (session) {
-    let typingText = "";
+    let typingText = '';
     if (typing) {
-      typingText = "Sugar is typing...";
+      typingText = 'Sugar is typing...';
     }
-    let submitText = "Submit";
+    let submitText = 'Submit';
     if (submitting) {
-      submitText = "Submitting...";
+      submitText = 'Submitting...';
     }
     return (
       <div>
@@ -101,8 +101,8 @@ const Form = ({ setWishes }: IFormProps) => {
           <button
             type="submit"
             className={
-              "px-3 py-1 text-white bg-black rounded-full " +
-              (submitting ? "bg-slate-600" : "")
+              'px-3 py-1 text-white bg-black rounded-full ' +
+              (submitting ? 'bg-slate-600' : '')
             }
             disabled={submitting}
           >

@@ -1,14 +1,14 @@
-import React, { useRef, useState, useEffect } from "react";
-import { GetStaticProps, NextPage } from "next";
+import React, { useRef, useState, useEffect } from 'react';
+import { GetStaticProps, NextPage } from 'next';
 
-import Header from "../components/header";
-import LogInOutButton from "../components/log-in-out-button";
-import Form from "../components/form";
-import Wishlist from "../components/wishlist";
-import Footer from "../components/footer";
-import IWish from "../utils/interfaces/IWish";
-import Head from "next/head";
-import { fetchWishes } from "../utils/fetchWishes";
+import Header from '../components/header';
+import LogInOutButton from '../components/log-in-out-button';
+import Form from '../components/form';
+import Wishlist from '../components/wishlist';
+import Footer from '../components/footer';
+import IWish from '../utils/interfaces/IWish';
+import Head from 'next/head';
+import { fetchWishes } from '../utils/fetchWishes';
 
 interface HomeFetchedWishesProps {
   fetchedWishes: IWish[];
@@ -17,11 +17,11 @@ interface HomeFetchedWishesProps {
 const Home: NextPage<HomeFetchedWishesProps> = () => {
   const formRef = useRef<null | HTMLDivElement>(null);
   const formScroll = () =>
-    formRef.current!.scrollIntoView({ behavior: "smooth" });
+    formRef.current!.scrollIntoView({ behavior: 'smooth' });
 
   const topRef = useRef<null | HTMLDivElement>(null);
   const topScroll = () =>
-    topRef.current!.scrollIntoView({ behavior: "smooth" });
+    topRef.current!.scrollIntoView({ behavior: 'smooth' });
 
   const [wishes, setWishes] = useState<IWish[]>([]);
 
