@@ -1,9 +1,9 @@
 import '../styles/globals.css';
-import { SessionProvider } from 'next-auth/react';
-import Head from 'next/head';
 
-import { createGlobalStyle } from 'styled-components';
 import { config, dom } from '@fortawesome/fontawesome-svg-core';
+import Head from 'next/head';
+import { SessionProvider } from 'next-auth/react';
+import { createGlobalStyle } from 'styled-components';
 config.autoAddCss = false;
 const GlobalStyles = createGlobalStyle`
     ${dom.css()}

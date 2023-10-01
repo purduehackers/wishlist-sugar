@@ -1,5 +1,5 @@
+import { faArrowDown, faChessKnight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessKnight, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 interface IFooterProps {
   topScroll(): void;

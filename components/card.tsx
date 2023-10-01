@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { fetchWishes } from '../utils/fetchWishes';
 import IWish from '../utils/interfaces/IWish';
 
