@@ -1,14 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
 import { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
+import React, { useEffect, useRef, useState } from 'react';
 
+import Footer from '../components/footer';
+import Form from '../components/form';
 import Header from '../components/header';
 import LogInOutButton from '../components/log-in-out-button';
-import Form from '../components/form';
 import Wishlist from '../components/wishlist';
-import Footer from '../components/footer';
-import IWish from '../utils/interfaces/IWish';
-import Head from 'next/head';
 import { fetchWishes } from '../utils/fetchWishes';
+import IWish from '../utils/interfaces/IWish';
 
 interface HomeFetchedWishesProps {
   fetchedWishes: IWish[];

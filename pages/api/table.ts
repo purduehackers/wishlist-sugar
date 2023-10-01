@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { base } from '../../utils/airtable';
 import { getSession } from 'next-auth/react';
+
 import { createWishes } from '../../utils/createWishes';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
